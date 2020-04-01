@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		317D3FE7243456CB0038C912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317D3FE6243456CB0038C912 /* Assets.xcassets */; };
 		317D3FEA243456CB0038C912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317D3FE8243456CB0038C912 /* LaunchScreen.storyboard */; };
 		317D3FF5243456CB0038C912 /* CanadaInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FF4243456CB0038C912 /* CanadaInfoTests.swift */; };
+		317D4000243459370038C912 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 317D3FFF243459370038C912 /* ReadMe.md */; };
+		317D4003243459D10038C912 /* CanadaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D4002243459D10038C912 /* CanadaModel.swift */; };
 		97BE2C4B1E9D7D3BDC2E40D5 /* Pods_CanadaInfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D08B44571437D90A7E525CF /* Pods_CanadaInfoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		317D3FF0243456CB0038C912 /* CanadaInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanadaInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		317D3FF4243456CB0038C912 /* CanadaInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaInfoTests.swift; sourceTree = "<group>"; };
 		317D3FF6243456CB0038C912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		317D3FFF243459370038C912 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		317D4002243459D10038C912 /* CanadaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaModel.swift; sourceTree = "<group>"; };
 		8B9E5A2CF080B1FE8065D9B5 /* Pods-CanadaInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfoTests.release.xcconfig"; path = "Target Support Files/Pods-CanadaInfoTests/Pods-CanadaInfoTests.release.xcconfig"; sourceTree = "<group>"; };
 		C390FD8444F53FF51BB1984F /* Pods_CanadaInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CanadaInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,7 +80,6 @@
 				2AF92A747C06F9E40AD40FEF /* Pods-CanadaInfoTests.debug.xcconfig */,
 				8B9E5A2CF080B1FE8065D9B5 /* Pods-CanadaInfoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -92,6 +95,7 @@
 		317D3FD1243456CA0038C912 = {
 			isa = PBXGroup;
 			children = (
+				317D3FFF243459370038C912 /* ReadMe.md */,
 				317D3FDC243456CA0038C912 /* CanadaInfo */,
 				317D3FF3243456CB0038C912 /* CanadaInfoTests */,
 				317D3FDB243456CA0038C912 /* Products */,
@@ -112,6 +116,8 @@
 		317D3FDC243456CA0038C912 /* CanadaInfo */ = {
 			isa = PBXGroup;
 			children = (
+				317D400424345A220038C912 /* Utility */,
+				317D4001243459A50038C912 /* Model */,
 				317D3FDD243456CA0038C912 /* AppDelegate.swift */,
 				317D3FDF243456CA0038C912 /* SceneDelegate.swift */,
 				317D3FE1243456CA0038C912 /* ViewController.swift */,
@@ -130,6 +136,29 @@
 				317D3FF6243456CB0038C912 /* Info.plist */,
 			);
 			path = CanadaInfoTests;
+			sourceTree = "<group>";
+		};
+		317D4001243459A50038C912 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				317D4002243459D10038C912 /* CanadaModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		317D400424345A220038C912 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				317D400524345A420038C912 /* Theme */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		317D400524345A420038C912 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				317D4000243459370038C912 /* ReadMe.md in Resources */,
 				317D3FEA243456CB0038C912 /* LaunchScreen.storyboard in Resources */,
 				317D3FE7243456CB0038C912 /* Assets.xcassets in Resources */,
 				317D3FE5243456CA0038C912 /* Main.storyboard in Resources */,
@@ -301,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				317D3FE2243456CA0038C912 /* ViewController.swift in Sources */,
+				317D4003243459D10038C912 /* CanadaModel.swift in Sources */,
 				317D3FDE243456CA0038C912 /* AppDelegate.swift in Sources */,
 				317D3FE0243456CA0038C912 /* SceneDelegate.swift in Sources */,
 			);
