@@ -18,7 +18,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
            
         override func loadView() {
                self.view = CListView(frame: UIScreen.main.bounds)
-           }
+        }
 
        override func viewDidLoad() {
            super.viewDidLoad()
