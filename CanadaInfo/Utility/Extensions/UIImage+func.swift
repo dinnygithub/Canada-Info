@@ -30,7 +30,7 @@ extension UIImageView {
                     })
                 }else{
                     DispatchQueue.main.async {
-                         self.image = UIImage(systemName: "exclamationmark")
+                         self.image = UIImage(named: "noimage")
                     }
                 }
             }

@@ -11,7 +11,6 @@
 		317D3FDE243456CA0038C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FDD243456CA0038C912 /* AppDelegate.swift */; };
 		317D3FE0243456CA0038C912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FDF243456CA0038C912 /* SceneDelegate.swift */; };
 		317D3FE2243456CA0038C912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FE1243456CA0038C912 /* ViewController.swift */; };
-		317D3FE5243456CA0038C912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317D3FE3243456CA0038C912 /* Main.storyboard */; };
 		317D3FE7243456CB0038C912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317D3FE6243456CB0038C912 /* Assets.xcassets */; };
 		317D3FEA243456CB0038C912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317D3FE8243456CB0038C912 /* LaunchScreen.storyboard */; };
 		317D3FF5243456CB0038C912 /* CanadaInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FF4243456CB0038C912 /* CanadaInfoTests.swift */; };
@@ -21,6 +20,9 @@
 		317D400A2434618A0038C912 /* UIVIew+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D40092434618A0038C912 /* UIVIew+constraints.swift */; };
 		317D400C2434619E0038C912 /* UIImage+func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D400B2434619E0038C912 /* UIImage+func.swift */; };
 		317D400F243461CC0038C912 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D400E243461CC0038C912 /* Constants.swift */; };
+		317D40122434754A0038C912 /* CListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D40112434754A0038C912 /* CListView.swift */; };
+		317D4014243475820038C912 /* CanadaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D4013243475820038C912 /* CanadaTVC.swift */; };
+		317D4017243475F70038C912 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D4016243475F70038C912 /* ListVC.swift */; };
 		97BE2C4B1E9D7D3BDC2E40D5 /* Pods_CanadaInfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D08B44571437D90A7E525CF /* Pods_CanadaInfoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +45,6 @@
 		317D3FDD243456CA0038C912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		317D3FDF243456CA0038C912 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		317D3FE1243456CA0038C912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		317D3FE4243456CA0038C912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		317D3FE6243456CB0038C912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		317D3FE9243456CB0038C912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		317D3FEB243456CB0038C912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +57,9 @@
 		317D40092434618A0038C912 /* UIVIew+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+constraints.swift"; sourceTree = "<group>"; };
 		317D400B2434619E0038C912 /* UIImage+func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+func.swift"; sourceTree = "<group>"; };
 		317D400E243461CC0038C912 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		317D40112434754A0038C912 /* CListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CListView.swift; sourceTree = "<group>"; };
+		317D4013243475820038C912 /* CanadaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaTVC.swift; sourceTree = "<group>"; };
+		317D4016243475F70038C912 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		8B9E5A2CF080B1FE8065D9B5 /* Pods-CanadaInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfoTests.release.xcconfig"; path = "Target Support Files/Pods-CanadaInfoTests/Pods-CanadaInfoTests.release.xcconfig"; sourceTree = "<group>"; };
 		C390FD8444F53FF51BB1984F /* Pods_CanadaInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CanadaInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,12 +128,13 @@
 		317D3FDC243456CA0038C912 /* CanadaInfo */ = {
 			isa = PBXGroup;
 			children = (
+				317D4015243475DB0038C912 /* Controller */,
+				317D4010243475370038C912 /* View */,
 				317D400424345A220038C912 /* Utility */,
 				317D4001243459A50038C912 /* Model */,
 				317D3FDD243456CA0038C912 /* AppDelegate.swift */,
 				317D3FDF243456CA0038C912 /* SceneDelegate.swift */,
 				317D3FE1243456CA0038C912 /* ViewController.swift */,
-				317D3FE3243456CA0038C912 /* Main.storyboard */,
 				317D3FE6243456CB0038C912 /* Assets.xcassets */,
 				317D3FE8243456CB0038C912 /* LaunchScreen.storyboard */,
 				317D3FEB243456CB0038C912 /* Info.plist */,
@@ -187,6 +192,23 @@
 				317D400E243461CC0038C912 /* Constants.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		317D4010243475370038C912 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				317D40112434754A0038C912 /* CListView.swift */,
+				317D4013243475820038C912 /* CanadaTVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		317D4015243475DB0038C912 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				317D4016243475F70038C912 /* ListVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +298,6 @@
 				317D4000243459370038C912 /* ReadMe.md in Resources */,
 				317D3FEA243456CB0038C912 /* LaunchScreen.storyboard in Resources */,
 				317D3FE7243456CB0038C912 /* Assets.xcassets in Resources */,
-				317D3FE5243456CA0038C912 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +380,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				317D3FE2243456CA0038C912 /* ViewController.swift in Sources */,
+				317D4017243475F70038C912 /* ListVC.swift in Sources */,
+				317D40122434754A0038C912 /* CListView.swift in Sources */,
 				317D400C2434619E0038C912 /* UIImage+func.swift in Sources */,
 				317D4003243459D10038C912 /* CanadaModel.swift in Sources */,
 				317D4007243460FC0038C912 /* Theme.swift in Sources */,
@@ -366,6 +389,7 @@
 				317D3FDE243456CA0038C912 /* AppDelegate.swift in Sources */,
 				317D3FE0243456CA0038C912 /* SceneDelegate.swift in Sources */,
 				317D400F243461CC0038C912 /* Constants.swift in Sources */,
+				317D4014243475820038C912 /* CanadaTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,14 +412,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		317D3FE3243456CA0038C912 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				317D3FE4243456CA0038C912 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		317D3FE8243456CB0038C912 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
