@@ -85,7 +85,7 @@ class CanadaTVC: UITableViewCell {
         addSubview(mainStack)
         addSubview(canadaImageView)
         
-        cellView.pin(to: self)
+        cellView.pinEdges(to: self)
         cellView.addSubview(mainStack)
         
         addSubview(subStack)
@@ -93,7 +93,7 @@ class CanadaTVC: UITableViewCell {
         addSubview(descriptionLabel)
         
         mainStack.addSubview(subStack)
-        mainStack.pin(to: cellView)
+   //     mainStack.pinEdges(to: cellView)
         
         mainStack.addArrangedSubview(canadaImageView)
         canadaImageView.snp.makeConstraints{ make in
@@ -112,13 +112,16 @@ class CanadaTVC: UITableViewCell {
             make.bottom.equalTo(descriptionLabel.snp.top)
         }
         
-        descriptionLabel.snp.makeConstraints{ make in
-            make.bottom.equalTo(subStack.snp.bottom)
-        }
-        subStack.snp.makeConstraints{ make in
-            make.bottom.equalTo(mainStack.snp.bottom)
-        }
+//        descriptionLabel.snp.makeConstraints{ make in
+//            make.bottom.equalTo(subStack.snp.bottom)
+//        }
+//        subStack.snp.makeConstraints{ make in
+//            make.bottom.equalTo(mainStack.snp.bottom)
+//        }
         mainStack.snp.makeConstraints{ make in
+            make.centerX.equalTo(cellView)
+            make.centerY.equalTo(cellView)
+            make.width.equalToSuperview().multipliedBy(0.9)
             make.bottom.equalTo(cellView.snp.bottom)
         }
         cellView.snp.makeConstraints{ make in

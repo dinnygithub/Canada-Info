@@ -11,6 +11,8 @@
 		310369FF24383492007695B1 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310369FE24383492007695B1 /* WebService.swift */; };
 		3173ABDC24385B4100B3EB76 /* CanadaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3173ABDB24385B4100B3EB76 /* CanadaListViewModel.swift */; };
 		3173ABDE2438A4BB00B3EB76 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3173ABDD2438A4BB00B3EB76 /* Connectivity.swift */; };
+		3173ABE02439644000B3EB76 /* CanadaServiceResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3173ABDF2439644000B3EB76 /* CanadaServiceResponseTest.swift */; };
+		3173ABE62439F2DF00B3EB76 /* CanadaViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3173ABE52439F2DF00B3EB76 /* CanadaViewModelTests.swift */; };
 		317D3FDE243456CA0038C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FDD243456CA0038C912 /* AppDelegate.swift */; };
 		317D3FE0243456CA0038C912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FDF243456CA0038C912 /* SceneDelegate.swift */; };
 		317D3FE2243456CA0038C912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FE1243456CA0038C912 /* ViewController.swift */; };
@@ -20,7 +22,7 @@
 		317D4000243459370038C912 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 317D3FFF243459370038C912 /* ReadMe.md */; };
 		317D4003243459D10038C912 /* CanadaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D4002243459D10038C912 /* CanadaModel.swift */; };
 		317D4007243460FC0038C912 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D4006243460FC0038C912 /* Theme.swift */; };
-		317D400A2434618A0038C912 /* UIVIew+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D40092434618A0038C912 /* UIVIew+constraints.swift */; };
+		317D400A2434618A0038C912 /* ExtViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D40092434618A0038C912 /* ExtViews.swift */; };
 		317D400C2434619E0038C912 /* UIImage+func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D400B2434619E0038C912 /* UIImage+func.swift */; };
 		317D400F243461CC0038C912 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D400E243461CC0038C912 /* Constants.swift */; };
 		317D40122434754A0038C912 /* CListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D40112434754A0038C912 /* CListView.swift */; };
@@ -49,6 +51,8 @@
 		310369FE24383492007695B1 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		3173ABDB24385B4100B3EB76 /* CanadaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaListViewModel.swift; sourceTree = "<group>"; };
 		3173ABDD2438A4BB00B3EB76 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		3173ABDF2439644000B3EB76 /* CanadaServiceResponseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaServiceResponseTest.swift; sourceTree = "<group>"; };
+		3173ABE52439F2DF00B3EB76 /* CanadaViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaViewModelTests.swift; sourceTree = "<group>"; };
 		317D3FDA243456CA0038C912 /* CanadaInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanadaInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317D3FDD243456CA0038C912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		317D3FDF243456CA0038C912 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +66,7 @@
 		317D3FFF243459370038C912 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		317D4002243459D10038C912 /* CanadaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaModel.swift; sourceTree = "<group>"; };
 		317D4006243460FC0038C912 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		317D40092434618A0038C912 /* UIVIew+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+constraints.swift"; sourceTree = "<group>"; };
+		317D40092434618A0038C912 /* ExtViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtViews.swift; sourceTree = "<group>"; };
 		317D400B2434619E0038C912 /* UIImage+func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+func.swift"; sourceTree = "<group>"; };
 		317D400E243461CC0038C912 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		317D40112434754A0038C912 /* CListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CListView.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 				317D3FF6243456CB0038C912 /* Info.plist */,
 				317D401824359AB30038C912 /* canady.json */,
 				317D401A2435A6280038C912 /* CanadaModelTest.swift */,
+				3173ABDF2439644000B3EB76 /* CanadaServiceResponseTest.swift */,
+				3173ABE52439F2DF00B3EB76 /* CanadaViewModelTests.swift */,
 			);
 			path = CanadaInfoTests;
 			sourceTree = "<group>";
@@ -210,7 +216,7 @@
 		317D40082434615E0038C912 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				317D40092434618A0038C912 /* UIVIew+constraints.swift */,
+				317D40092434618A0038C912 /* ExtViews.swift */,
 				317D400B2434619E0038C912 /* UIImage+func.swift */,
 			);
 			path = Extensions;
@@ -419,7 +425,7 @@
 				317D4007243460FC0038C912 /* Theme.swift in Sources */,
 				3173ABDE2438A4BB00B3EB76 /* Connectivity.swift in Sources */,
 				310369FF24383492007695B1 /* WebService.swift in Sources */,
-				317D400A2434618A0038C912 /* UIVIew+constraints.swift in Sources */,
+				317D400A2434618A0038C912 /* ExtViews.swift in Sources */,
 				3173ABDC24385B4100B3EB76 /* CanadaListViewModel.swift in Sources */,
 				317D3FDE243456CA0038C912 /* AppDelegate.swift in Sources */,
 				317D3FE0243456CA0038C912 /* SceneDelegate.swift in Sources */,
@@ -432,7 +438,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3173ABE62439F2DF00B3EB76 /* CanadaViewModelTests.swift in Sources */,
 				317D3FF5243456CB0038C912 /* CanadaInfoTests.swift in Sources */,
+				3173ABE02439644000B3EB76 /* CanadaServiceResponseTest.swift in Sources */,
 				317D401B2435A6280038C912 /* CanadaModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

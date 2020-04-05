@@ -19,7 +19,7 @@ class CListView: UIView {
     
     let backgroundView: UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = Theme.colors.ciGreen()
+        view.backgroundColor = Theme.colors.ciWhite()
         return view
     }()
     
@@ -37,12 +37,19 @@ class CListView: UIView {
     
     private func setupConstraints() {
         backgroundView.pinEdges(to: self)
-        self.tableview.pinEdges(to: backgroundView)
     }
     
     private func setupViews() {
         self.addSubview(backgroundView)
         self.addSubview(tableview)
+        backgroundView.addSubview(self.tableview)
+        
+        tableview.snp.makeConstraints { make in
+            make.width.equalToSuperview().multipliedBy(0.95)
+            make.height.equalToSuperview().multipliedBy(0.9)
+            make.centerX.equalTo(backgroundView)
+            make.centerY.equalTo(backgroundView)
+        }
     }
 }
 

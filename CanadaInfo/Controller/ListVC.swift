@@ -9,8 +9,9 @@
 import UIKit
 import Alamofire
 
-class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListVC: UIViewController, UITableViewDelegate {
     var tableView: UITableView!
+    // var dataSource = CanadaDataSource()
     private var viewModel: CanadaListViewModel = CanadaListViewModel() {
         didSet{
             self.updateUI()
@@ -21,6 +22,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func loadView() {
         self.view = CListView(frame: UIScreen.main.bounds)
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,8 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(CanadaTVC.self, forCellReuseIdentifier: kCellId)
+        NotificationCenter.default.addObserver(self.mainView.tableview, selector: #selector(updateUI), name: UIContentSizeCategory.didChangeNotification, object: nil)
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:
             UIBarButtonItem.SystemItem.refresh, target: self, action:
             #selector(refreshData))
@@ -52,21 +56,13 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
+//    
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        self.updateUI()
+//    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10;
-    }
-    
-    //data is shown in sections to acheive space between each row item
-    func numberOfSections(in tableView: UITableView) -> Int {
-        if self.viewModel.canadaRows?.count ?? 0 <= 0 {
-            tableView.setEmptyView(title: kSorry, message: kNoData)
-        }
-        else {
-            tableView.restore()
-        }
-        return (self.viewModel.canadaRows?.count) ?? 0
     }
     
     // header is created which is used as space between each row item.
@@ -76,14 +72,38 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return header
     }
     
-    //each section will have only 1 row. This is for  design prurpose only.
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
     //To get dynamic cell height, UITableViewAutomaticDimension is used and the constraints of the table view cell is set up accordingly.
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    @objc private func updateUI() {
+        DispatchQueue.main.async() { [weak self] in
+            self?.tableView.reloadData()
+            self?.tableView.invalidateIntrinsicContentSize()
+            self?.tableView.layoutIfNeeded()
+        }
+    }
+   
+    
+    
+}
+
+extension ListVC : UITableViewDataSource {
+    //data is shown in sections to acheive space between each row item
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if self.viewModel.canadaRows?.count ?? 0 <= 0 {
+            //show no data message if there is no rows available in the web service response
+            tableView.setEmptyView(title: kSorry, message: kNoData)
+        }
+        else {
+            tableView.restore()
+        }
+        return (self.viewModel.canadaRows?.count) ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
     //data from canadaList is accessed and the table view is populated
@@ -100,13 +120,5 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         cell.makeRoundCorners(byRadius: 10)
         return cell
-    }
-    
-    private func updateUI() {
-        DispatchQueue.main.async() { [weak self] in
-            self?.tableView.reloadData()
-            self?.tableView.invalidateIntrinsicContentSize()
-            self?.tableView.layoutIfNeeded()
-        }
     }
 }
