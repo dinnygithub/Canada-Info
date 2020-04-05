@@ -6,7 +6,7 @@
 //  Copyright © 2020 Dinny Anand. All rights reserved.
 //
 
-import SnapKit
+import UIKit
 class CListView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,12 +18,10 @@ class CListView: UIView {
     }
     
     let backgroundView: UIView = {
-           let view = UIView(frame: .zero)
+        let view = UIView(frame: .zero)
         view.backgroundColor = Theme.colors.ciGreen()
-           return view
-       }()
-
-    
+        return view
+    }()
     
     let tableview: UITableView = {
         let tv = UITableView()
@@ -31,21 +29,20 @@ class CListView: UIView {
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
- 
     
     private func setup() {
-           setupViews()
-           setupConstraints()
-       }
+        setupViews()
+        setupConstraints()
+    }
     
     private func setupConstraints() {
         backgroundView.pinEdges(to: self)
         self.tableview.pinEdges(to: backgroundView)
-       }
-
+    }
+    
     private func setupViews() {
-           self.addSubview(backgroundView)
-           self.addSubview(tableview)
+        self.addSubview(backgroundView)
+        self.addSubview(tableview)
     }
 }
 

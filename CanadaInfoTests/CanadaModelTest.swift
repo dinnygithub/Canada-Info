@@ -11,12 +11,12 @@ import XCTest
 
 class CanadaModelTest: XCTestCase {
     
-     var canadaList : [Row] = []
+    var canadaList : [Row] = []
     var viewTitle : String?
     
     override func setUp() {
         super.setUp()
-
+        
         let bundle = Bundle(for: classForCoder)
         let url = bundle.url(forResource: "canady", withExtension: "json")
         
@@ -32,7 +32,7 @@ class CanadaModelTest: XCTestCase {
         XCTAssertEqual(row?.title,"Beavers")
     }
     func testMediaUrl(){
-         let row = canadaList.first
+        let row = canadaList.first
         XCTAssertEqual(row?.imageHref, "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg")
     }
     func testViewTitle() {

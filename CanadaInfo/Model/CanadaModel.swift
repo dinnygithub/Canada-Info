@@ -12,9 +12,9 @@ struct CanadaModel : Codable {
     var title : String
     var rows : [Row]?
     private enum CodingKeys : String, CodingKey {
-           case title
-           case rows
-       }
+        case title
+        case rows
+    }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -42,25 +42,25 @@ struct Row : Codable {
     }
     
     init(from decoder: Decoder) throws {
-           let container = try decoder.container(keyedBy: CodingKeys.self)
-           
-           title = ""
-           if let value = try? container.decode(String.self, forKey: .title){
-               title = value
-           }
-           description = ""
-           if let value = try? container.decode(String.self, forKey: .description){
-               description = value
-           }
-           imageHref = ""
-           if let value = try? container.decode(String.self, forKey: .imageHref){
-                imageHref = value
-           }
-       }
-       init(){
-           title = ""
-           description = ""
-           imageHref = ""
-       }
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        title = ""
+        if let value = try? container.decode(String.self, forKey: .title){
+            title = value
+        }
+        description = ""
+        if let value = try? container.decode(String.self, forKey: .description){
+            description = value
+        }
+        imageHref = ""
+        if let value = try? container.decode(String.self, forKey: .imageHref){
+            imageHref = value
+        }
+    }
+    init(){
+        title = ""
+        description = ""
+        imageHref = ""
+    }
     
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0FEF88A14284391E9280FCFD /* Pods_CanadaInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C390FD8444F53FF51BB1984F /* Pods_CanadaInfo.framework */; };
+		310369FF24383492007695B1 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310369FE24383492007695B1 /* WebService.swift */; };
+		3173ABDC24385B4100B3EB76 /* CanadaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3173ABDB24385B4100B3EB76 /* CanadaListViewModel.swift */; };
+		3173ABDE2438A4BB00B3EB76 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3173ABDD2438A4BB00B3EB76 /* Connectivity.swift */; };
 		317D3FDE243456CA0038C912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FDD243456CA0038C912 /* AppDelegate.swift */; };
 		317D3FE0243456CA0038C912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FDF243456CA0038C912 /* SceneDelegate.swift */; };
 		317D3FE2243456CA0038C912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3FE1243456CA0038C912 /* ViewController.swift */; };
@@ -43,6 +46,9 @@
 		1923D768E4329329E6B0561B /* Pods-CanadaInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfo.release.xcconfig"; path = "Target Support Files/Pods-CanadaInfo/Pods-CanadaInfo.release.xcconfig"; sourceTree = "<group>"; };
 		2AF92A747C06F9E40AD40FEF /* Pods-CanadaInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfoTests.debug.xcconfig"; path = "Target Support Files/Pods-CanadaInfoTests/Pods-CanadaInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D08B44571437D90A7E525CF /* Pods_CanadaInfoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CanadaInfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		310369FE24383492007695B1 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		3173ABDB24385B4100B3EB76 /* CanadaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaListViewModel.swift; sourceTree = "<group>"; };
+		3173ABDD2438A4BB00B3EB76 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		317D3FDA243456CA0038C912 /* CanadaInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanadaInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317D3FDD243456CA0038C912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		317D3FDF243456CA0038C912 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +67,7 @@
 		317D400E243461CC0038C912 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		317D40112434754A0038C912 /* CListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CListView.swift; sourceTree = "<group>"; };
 		317D4013243475820038C912 /* CanadaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaTVC.swift; sourceTree = "<group>"; };
-		317D4016243475F70038C912 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		317D4016243475F70038C912 /* ListVC.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		317D401824359AB30038C912 /* canady.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = canady.json; sourceTree = "<group>"; };
 		317D401A2435A6280038C912 /* CanadaModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaModelTest.swift; sourceTree = "<group>"; };
 		8B9E5A2CF080B1FE8065D9B5 /* Pods-CanadaInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanadaInfoTests.release.xcconfig"; path = "Target Support Files/Pods-CanadaInfoTests/Pods-CanadaInfoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +114,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		310369FD24383476007695B1 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				310369FE24383492007695B1 /* WebService.swift */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		3173ABDA243859D900B3EB76 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3173ABDB24385B4100B3EB76 /* CanadaListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		317D3FD1243456CA0038C912 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +154,8 @@
 		317D3FDC243456CA0038C912 /* CanadaInfo */ = {
 			isa = PBXGroup;
 			children = (
+				3173ABDA243859D900B3EB76 /* ViewModel */,
+				310369FD24383476007695B1 /* WebServices */,
 				317D4015243475DB0038C912 /* Controller */,
 				317D4010243475370038C912 /* View */,
 				317D400424345A220038C912 /* Utility */,
@@ -196,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				317D400E243461CC0038C912 /* Constants.swift */,
+				3173ABDD2438A4BB00B3EB76 /* Connectivity.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -392,7 +417,10 @@
 				317D400C2434619E0038C912 /* UIImage+func.swift in Sources */,
 				317D4003243459D10038C912 /* CanadaModel.swift in Sources */,
 				317D4007243460FC0038C912 /* Theme.swift in Sources */,
+				3173ABDE2438A4BB00B3EB76 /* Connectivity.swift in Sources */,
+				310369FF24383492007695B1 /* WebService.swift in Sources */,
 				317D400A2434618A0038C912 /* UIVIew+constraints.swift in Sources */,
+				3173ABDC24385B4100B3EB76 /* CanadaListViewModel.swift in Sources */,
 				317D3FDE243456CA0038C912 /* AppDelegate.swift in Sources */,
 				317D3FE0243456CA0038C912 /* SceneDelegate.swift in Sources */,
 				317D400F243461CC0038C912 /* Constants.swift in Sources */,

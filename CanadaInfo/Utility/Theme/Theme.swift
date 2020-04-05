@@ -21,6 +21,9 @@ class Theme {
         class func ciBlack()->UIColor {
             return UIColor.black
         }
+        class func ciGray()->UIColor {
+            return UIColor.gray
+        }
     }
     
     class fonts {

@@ -6,23 +6,23 @@
 //  Copyright © 2020 Dinny Anand. All rights reserved.
 //
 
-import SnapKit
 import UIKit
+import SnapKit
 
 class CanadaTVC: UITableViewCell {
     
-     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-           super.init(style: style, reuseIdentifier: reuseIdentifier)
-           setupView()
-       }
-       
-       required init?(coder aDecoder: NSCoder) {
-           fatalError("init(coder:) has not been implemented")
-       }
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func makeRoundCorners(byRadius rad: CGFloat) {
-       self.layer.cornerRadius = rad
-       self.clipsToBounds = true
+        self.layer.cornerRadius = rad
+        self.clipsToBounds = true
     }
     
     let cellView: UIView = {
@@ -34,9 +34,7 @@ class CanadaTVC: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-   
-    
+
     let subStack: UIStackView = {
         let stackView = UIStackView(frame: .zero)
         stackView.axis = .vertical
@@ -48,14 +46,14 @@ class CanadaTVC: UITableViewCell {
     }()
     
     let titleLabel: UILabel = {
-           let label = UILabel()
-           label.textColor = Theme.colors.ciBlack()
-           label.numberOfLines = 0
-           label.font = Theme.fonts.avenirMedium(size: 14.0)
-           label.translatesAutoresizingMaskIntoConstraints = false
-           label.textAlignment = NSTextAlignment.left
-           return label
-       }()
+        let label = UILabel()
+        label.textColor = Theme.colors.ciBlack()
+        label.numberOfLines = 0
+        label.font = Theme.fonts.avenirMedium(size: 14.0)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = NSTextAlignment.left
+        return label
+    }()
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
@@ -93,10 +91,10 @@ class CanadaTVC: UITableViewCell {
         addSubview(subStack)
         addSubview(titleLabel)
         addSubview(descriptionLabel)
-
+        
         mainStack.addSubview(subStack)
         mainStack.pin(to: cellView)
-       
+        
         mainStack.addArrangedSubview(canadaImageView)
         canadaImageView.snp.makeConstraints{ make in
             make.width.equalTo(200)
@@ -105,15 +103,15 @@ class CanadaTVC: UITableViewCell {
         
         addSubview(subStack)
         mainStack.addArrangedSubview(subStack)
-
+        
         subStack.addArrangedSubview(titleLabel)
         subStack.addArrangedSubview(descriptionLabel)
-
+        
         titleLabel.snp.makeConstraints{ make in
             make.height.equalTo(30)
             make.bottom.equalTo(descriptionLabel.snp.top)
         }
-       
+        
         descriptionLabel.snp.makeConstraints{ make in
             make.bottom.equalTo(subStack.snp.bottom)
         }
@@ -126,9 +124,7 @@ class CanadaTVC: UITableViewCell {
         cellView.snp.makeConstraints{ make in
             make.bottom.equalTo(self.snp.bottom)
         }
-        
         self.descriptionLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: NSLayoutConstraint.Axis.vertical);
-
         self.selectionStyle = .none
     }
 }

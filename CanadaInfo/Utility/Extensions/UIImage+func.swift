@@ -22,15 +22,16 @@ extension UIImageView {
         if let url = URL(string: urlString) {
             //the image is downloaded using URLSession from the url
             let session = URLSession.shared
-            let dataTask = session.dataTask(with: url) { (data, _, _) in
+            let dataTask = session.dataTask(with: url) { [weak self] (data, _, _) in
+                guard let strongSelf = self else { return }
                 if let unwrappedData = data, let downloadedImage = UIImage(data: unwrappedData) {
                     DispatchQueue.main.async(execute: {
                         imageCache.setObject(downloadedImage, forKey: urlString as NSString)
-                        self.image = downloadedImage
+                        strongSelf.image = downloadedImage
                     })
                 }else{
                     DispatchQueue.main.async {
-                         self.image = UIImage(named: "noimage")
+                        strongSelf.image = UIImage(named: "noimage")
                     }
                 }
             }
@@ -38,7 +39,7 @@ extension UIImageView {
         }
     }
     func makeRoundCorners(byRadius rad: CGFloat) {
-       self.layer.cornerRadius = rad
-       self.clipsToBounds = true
+        self.layer.cornerRadius = rad
+        self.clipsToBounds = true
     }
 }
