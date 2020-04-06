@@ -32,17 +32,13 @@ class CListView: UIView {
     
     private func setup() {
         setupViews()
-        setupConstraints()
     }
     
-    private func setupConstraints() {
-        backgroundView.pinEdges(to: self)
-    }
+   
     
     private func setupViews() {
         self.addSubview(backgroundView)
         backgroundView.pin(to: self)
-   //     self.addSubview(tableview)
         backgroundView.addSubview(self.tableview)
         
         tableview.snp.makeConstraints { make in

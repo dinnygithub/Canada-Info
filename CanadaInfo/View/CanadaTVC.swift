@@ -37,21 +37,23 @@ class CanadaTVC: UITableViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Theme.colors.ciBlack()
+        label.textColor = Theme.colors.ciWhite()
         label.numberOfLines = 0
         label.font = Theme.fonts.avenirMedium(size: 14.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = NSTextAlignment.left
+          label.lineBreakMode = .byWordWrapping
         return label
     }()
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Theme.colors.ciBlack()
+        label.textColor = Theme.colors.ciWhite()
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = Theme.fonts.avenirLight(size: 13)
         label.textAlignment = NSTextAlignment.left
+          label.lineBreakMode = .byWordWrapping
         return label
     }()
     
@@ -64,9 +66,9 @@ class CanadaTVC: UITableViewCell {
     let mainStack: UIStackView = {
         let stackView = UIStackView(frame: .zero)
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.spacing = 0
-        stackView.addBackground(color: UIColor.clear)
+        stackView.addBackground(color: Theme.colors.ciBlack())
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -97,7 +99,7 @@ class CanadaTVC: UITableViewCell {
             make.height.equalToSuperview()
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
-            make.leading.equalTo(0)
+            make.leading.equalTo(mainStack.snp.leading)
         }
         
         subStack.addArrangedSubview(titleLabel)
@@ -106,12 +108,14 @@ class CanadaTVC: UITableViewCell {
             make.height.equalTo(30)
             make.top.equalTo(subStack.snp.top)
             make.width.equalToSuperview()
+            make.leading.equalTo(subStack.snp.leading)
             make.bottom.equalTo(descriptionLabel.snp.top)
         }
         descriptionLabel.snp.makeConstraints{ make in
             make.top.equalTo(titleLabel.snp.bottom)
             make.width.equalToSuperview()
             make.bottom.equalTo(subStack.snp.bottom)
+              make.leading.equalTo(subStack.snp.leading)
         }
         subStack.snp.makeConstraints{ make in
             make.bottom.equalTo(mainStack.snp.bottom)
