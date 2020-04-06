@@ -30,6 +30,11 @@ extension UIStackView {
         let subView = UIView(frame: bounds)
         subView.backgroundColor = color
         subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        subView.layer.cornerRadius = 10
+                subView.layer.borderColor = UIColor.black.cgColor
+                subView.layer.borderWidth = 2.0
+                subView.layer.masksToBounds = true
+                subView.translatesAutoresizingMaskIntoConstraints = false
         insertSubview(subView, at: 0)
     }
 }

@@ -24,23 +24,13 @@ class CanadaTVC: UITableViewCell {
         self.layer.cornerRadius = rad
         self.clipsToBounds = true
     }
-    
-    let cellView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 10
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 2.0
-        view.layer.masksToBounds = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
 
     let subStack: UIStackView = {
         let stackView = UIStackView(frame: .zero)
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillProportionally
-        stackView.alignment = .leading
+     //   stackView.alignment = .leading
         stackView.spacing = 0
         return stackView
     }()
@@ -76,56 +66,55 @@ class CanadaTVC: UITableViewCell {
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.spacing = 0
+        stackView.addBackground(color: UIColor.clear)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
     func setupView() {
-        addSubview(cellView)
         addSubview(mainStack)
         addSubview(canadaImageView)
-        
-        cellView.pinEdges(to: self)
-        cellView.addSubview(mainStack)
-        
         addSubview(subStack)
         addSubview(titleLabel)
         addSubview(descriptionLabel)
         
-        mainStack.addSubview(subStack)
-   //     mainStack.pinEdges(to: cellView)
         
-        mainStack.addArrangedSubview(canadaImageView)
-        canadaImageView.snp.makeConstraints{ make in
-            make.width.equalTo(200)
+         self.addSubview(mainStack)
+         mainStack.pin(to: self)
+         mainStack.addArrangedSubview(canadaImageView)
+         mainStack.addArrangedSubview(subStack)
+        
+         mainStack.snp.makeConstraints{ make in
+            make.centerX.equalTo(self)
+            make.centerY.equalTo(self)
+            make.width.equalToSuperview()
+            make.bottom.equalTo(self.snp.bottom)
+            make.top.equalTo(self.snp.top)
         }
         
-        
-        addSubview(subStack)
-        mainStack.addArrangedSubview(subStack)
+        canadaImageView.snp.makeConstraints { make in
+            make.width.equalToSuperview().multipliedBy(0.2)
+            make.height.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.leading.equalTo(0)
+        }
         
         subStack.addArrangedSubview(titleLabel)
         subStack.addArrangedSubview(descriptionLabel)
-        
         titleLabel.snp.makeConstraints{ make in
             make.height.equalTo(30)
+            make.top.equalTo(subStack.snp.top)
+            make.width.equalToSuperview()
             make.bottom.equalTo(descriptionLabel.snp.top)
         }
-        
-//        descriptionLabel.snp.makeConstraints{ make in
-//            make.bottom.equalTo(subStack.snp.bottom)
-//        }
-//        subStack.snp.makeConstraints{ make in
-//            make.bottom.equalTo(mainStack.snp.bottom)
-//        }
-        mainStack.snp.makeConstraints{ make in
-            make.centerX.equalTo(cellView)
-            make.centerY.equalTo(cellView)
-            make.width.equalToSuperview().multipliedBy(0.9)
-            make.bottom.equalTo(cellView.snp.bottom)
+        descriptionLabel.snp.makeConstraints{ make in
+            make.top.equalTo(titleLabel.snp.bottom)
+            make.width.equalToSuperview()
+            make.bottom.equalTo(subStack.snp.bottom)
         }
-        cellView.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.snp.bottom)
+        subStack.snp.makeConstraints{ make in
+            make.bottom.equalTo(mainStack.snp.bottom)
         }
         self.descriptionLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: NSLayoutConstraint.Axis.vertical);
         self.selectionStyle = .none
