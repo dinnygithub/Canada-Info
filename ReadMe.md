@@ -39,7 +39,9 @@ Everytime the array canadaList: [Row] is populated, the table view is reloaded. 
 
 WebService.swift is used for web services. The code for API calls is not in the view controller. 
 
-The height of table view cells are dynamic according to the data downloaded. No content is clipped and  some rows are  larger than others. To attain this UITableViewAutomaticDimension is used and the constraints of the table view cell is set up accordingly. No story boards or xibs are used.  Snap Kit library helps to use the auto layout constraints easily. A rightBarButtonItem is added for refresh data. To fetch the data, getApiData function is called which has the implementation of web service call via Alamofire library. Since the json response contains other characters, the response is  String.Encoding.isoLatin1 encoded and then mapped to our Canada Model. The table view delagate methods are implemented and populated with data.
+The height of table view cells are dynamic according to the data downloaded. No content is clipped and  some rows are  larger than others. To attain this UITableViewAutomaticDimension is used and the constraints of the table view cell is set up accordingly. No story boards or xibs are used.  Snap Kit library helps to use the auto layout constraints easily. A rightBarButtonItem is added for refresh data.
+
+From the viewmodel, the getCanadaData function is called. To fetch the data, getApiData function gets called which has the implementation of web service call via Alamofire library. Since the json response contains other characters, the response is  String.Encoding.isoLatin1 encoded and then mapped to our Canada Model. The table view delagate methods are implemented and populated with data. The setting of cell is done in CanadaTVC.
 
 The image is downloaded using URLSession from the url. The image is cached once it is downloaded. The  implementation is done by creating a function imageFromUrl
 
