@@ -29,6 +29,11 @@ struct CanadaModel : Codable {
             rows = value
         }
     }
+    
+    init(){
+        title = ""
+        rows = [Row]()
+    }
 }
 
 struct Row : Codable {

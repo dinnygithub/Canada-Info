@@ -11,18 +11,12 @@ import Alamofire
 
 class ListVC: UIViewController, UITableViewDelegate {
     var tableView: UITableView!
-    // var dataSource = CanadaDataSource()
-    private var viewModel: CanadaListViewModel = CanadaListViewModel() {
-        didSet{
-            self.updateUI()
-        }
-    }
+    private var viewModel = CanadaListViewModel()
     var mainView: CListView! { return self.view as? CListView }
     
     override func loadView() {
         self.view = CListView(frame: UIScreen.main.bounds)
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +26,6 @@ class ListVC: UIViewController, UITableViewDelegate {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(CanadaTVC.self, forCellReuseIdentifier: kCellId)
         NotificationCenter.default.addObserver(self.mainView.tableview, selector: #selector(updateUI), name: UIContentSizeCategory.didChangeNotification, object: nil)
-
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:
             UIBarButtonItem.SystemItem.refresh, target: self, action:
             #selector(refreshData))
@@ -41,25 +34,16 @@ class ListVC: UIViewController, UITableViewDelegate {
     
     @objc func refreshData(){
         if Connectivity.isConnectedToInternet(){
-            getCanadaData()
-        }else{
+            self.viewModel.getCanadaData { [weak self] data in
+                self?.updateUI()
+                DispatchQueue.main.async() {
+                    self?.title = self?.viewModel.dataCanada.title
+                }
+            }
+        }else {
             self.showAlertMessage(titleStr: kNoInternet, messageStr: "")
         }
     }
-    
-    func getCanadaData(){
-        WebService().getApiData(url: kBaseUrl){ [weak self] canadaData in
-            guard let strongSelf = self else { return }
-            strongSelf.viewModel = CanadaListViewModel(title: canadaData.title,  rows: canadaData.rows)
-            DispatchQueue.main.async() {
-                self?.title = strongSelf.viewModel.title
-            }
-        }
-    }
-//    
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        self.updateUI()
-//    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10;
@@ -84,22 +68,19 @@ class ListVC: UIViewController, UITableViewDelegate {
             self?.tableView.layoutIfNeeded()
         }
     }
-   
-    
-    
 }
 
 extension ListVC : UITableViewDataSource {
     //data is shown in sections to acheive space between each row item
     func numberOfSections(in tableView: UITableView) -> Int {
-        if self.viewModel.canadaRows?.count ?? 0 <= 0 {
+        if self.viewModel.dataCanada.rows?.count ?? 0 <= 0 {
             //show no data message if there is no rows available in the web service response
             tableView.setEmptyView(title: kSorry, message: kNoData)
         }
         else {
             tableView.restore()
         }
-        return (self.viewModel.canadaRows?.count) ?? 0
+        return (self.viewModel.dataCanada.rows?.count) ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,14 +92,7 @@ extension ListVC : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellId, for: indexPath) as! CanadaTVC
         cell.backgroundColor = UIColor.white
         cell.tag = indexPath.section
-        let canadaRow = self.viewModel.canadaRows?[indexPath.section]
-        cell.titleLabel.text = canadaRow?.title
-        cell.descriptionLabel.text = canadaRow?.description
-        cell.canadaImageView.imageFromUrl(canadaRow?.imageHref ?? "")
-        if cell.canadaImageView.image == nil {
-            cell.canadaImageView.image = UIImage(named: "noimage")
-        }
-        cell.makeRoundCorners(byRadius: 10)
+        cell.canadaRowCell = self.viewModel.dataCanada.rows?[indexPath.section]
         return cell
     }
 }

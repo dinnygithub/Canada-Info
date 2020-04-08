@@ -34,8 +34,6 @@ class CListView: UIView {
         setupViews()
     }
     
-   
-    
     private func setupViews() {
         self.addSubview(backgroundView)
         backgroundView.pin(to: self)

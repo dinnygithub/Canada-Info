@@ -11,6 +11,19 @@ import SnapKit
 
 class CanadaTVC: UITableViewCell {
     
+    var canadaRowCell:Row? {
+        didSet{
+            guard let cellRowItem = canadaRowCell else {return}
+            titleLabel.text = cellRowItem.title
+            descriptionLabel.text = cellRowItem.description
+            canadaImageView.imageFromUrl(cellRowItem.imageHref )
+            if canadaImageView.image == nil {
+                canadaImageView.image = UIImage(named: "noimage")
+            }
+            makeRoundCorners(byRadius: 10)
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
@@ -24,13 +37,12 @@ class CanadaTVC: UITableViewCell {
         self.layer.cornerRadius = rad
         self.clipsToBounds = true
     }
-
+    
     let subStack: UIStackView = {
         let stackView = UIStackView(frame: .zero)
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .fillProportionally
-     //   stackView.alignment = .leading
         stackView.spacing = 0
         return stackView
     }()
@@ -42,7 +54,7 @@ class CanadaTVC: UITableViewCell {
         label.font = Theme.fonts.avenirMedium(size: 14.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = NSTextAlignment.left
-          label.lineBreakMode = .byWordWrapping
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
     
@@ -53,7 +65,7 @@ class CanadaTVC: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = Theme.fonts.avenirLight(size: 13)
         label.textAlignment = NSTextAlignment.left
-          label.lineBreakMode = .byWordWrapping
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
     
@@ -81,12 +93,12 @@ class CanadaTVC: UITableViewCell {
         addSubview(descriptionLabel)
         
         
-         self.addSubview(mainStack)
-         mainStack.pin(to: self)
-         mainStack.addArrangedSubview(canadaImageView)
-         mainStack.addArrangedSubview(subStack)
+        self.addSubview(mainStack)
+        mainStack.pin(to: self)
+        mainStack.addArrangedSubview(canadaImageView)
+        mainStack.addArrangedSubview(subStack)
         
-         mainStack.snp.makeConstraints{ make in
+        mainStack.snp.makeConstraints{ make in
             make.centerX.equalTo(self)
             make.centerY.equalTo(self)
             make.width.equalToSuperview()
@@ -106,7 +118,7 @@ class CanadaTVC: UITableViewCell {
         subStack.addArrangedSubview(descriptionLabel)
         titleLabel.snp.makeConstraints{ make in
             make.height.equalTo(30)
-            make.top.equalTo(subStack.snp.top)
+          //  make.top.equalTo(subStack.snp.top)
             make.width.equalToSuperview()
             make.leading.equalTo(subStack.snp.leading)
             make.bottom.equalTo(descriptionLabel.snp.top)
@@ -115,14 +127,13 @@ class CanadaTVC: UITableViewCell {
             make.top.equalTo(titleLabel.snp.bottom)
             make.width.equalToSuperview()
             make.bottom.equalTo(subStack.snp.bottom)
-              make.leading.equalTo(subStack.snp.leading)
+            make.leading.equalTo(subStack.snp.leading)
         }
         subStack.snp.makeConstraints{ make in
             make.bottom.equalTo(mainStack.snp.bottom)
         }
         self.descriptionLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: NSLayoutConstraint.Axis.vertical);
+        self.titleLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: NSLayoutConstraint.Axis.vertical);
         self.selectionStyle = .none
     }
 }
-
-
